@@ -4,7 +4,7 @@
 #
 version: 2
 orbs:
-  codecov: codecov/codecov@3.2.5
+  codecov: mongo_CodeCov/codecov@3.2.5
 
 
 jobs:
