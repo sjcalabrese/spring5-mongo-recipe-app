@@ -58,9 +58,9 @@ jobs:
       - store_artifacts:
           path: ~/junit
 
-      - codecov/upload:
-          file: coverage.xml
-          flags: backend
+      - upload-to-codecov:
+          jobs:
+            - codecov/upload
 
 
 
