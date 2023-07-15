@@ -4,7 +4,7 @@
 #
 version: 2
 orbs:
-  codecov: mongo_CodeCov/codecov@3.2.5
+  codecov: codecov/codecov@3.2.5
 
 
 jobs:
@@ -58,8 +58,9 @@ jobs:
       - store_artifacts:
           path: ~/junit
 
-#      - run:
-#          name: Send to CodeCov
-#          command: bash <(curl -s https://codecov.io/bash)
+      - codecov/upload:
+          file: coverage.xml
+          flags: backend
+
 
 
