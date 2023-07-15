@@ -2,7 +2,14 @@
 
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
-version: 2
+version: 2.1
+orbs:
+  codecov: codecov/codecov@3.2.5
+workflows:
+  upload-to-codecov:
+    jobs:
+      - checkout
+      - codecov/upload
 
 jobs:
   build:
@@ -55,8 +62,8 @@ jobs:
       - store_artifacts:
           path: ~/junit
 
-      - run:
-          name: Send to CodeCov
-          command: bash <(curl -s https://codecov.io/bash)
+#      - run:
+#          name: Send to CodeCov
+#          command: bash <(curl -s https://codecov.io/bash)
 
 
