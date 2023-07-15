@@ -59,9 +59,9 @@ jobs:
 orbs:
   codecov: codecov/codecov@3.2.5
 
+    - run:
+        name: Send to CodeCov
+        command: bash <(curl -s https://codecov.io/bash)  steps:
 
-  steps:
-    - codecov/upload:
-        file: {{ coverage_report_filepath }}
 
 
