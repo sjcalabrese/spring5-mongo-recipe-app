@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/sjcalabrese/spring5-mongo-recipe-app.svg?style=svg)](https://circleci.com/gh/sjcalabrese/spring5-mongo-recipe-app)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/sjcalabrese/spring5-mongo-recipe-app/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/sjcalabrese/spring5-mongo-recipe-app/tree/master)
 
 [![codecov](https://codecov.io/gh/sjcalabrese/spring5-mongo-recipe-app/branch/master/graph/badge.svg)](https://codecov.io/gh/sjcalabrese/spring5-mongo-recipe-app)
 
