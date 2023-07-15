@@ -59,9 +59,9 @@ jobs:
 orbs:
   codecov: codecov/codecov@3.2.5
 
-  build:
-    steps:
-      - codecov/upload:
-          file: {{ coverage_report_filepath }}
+
+  steps:
+    - codecov/upload:
+        file: {{ coverage_report_filepath }}
 
 
