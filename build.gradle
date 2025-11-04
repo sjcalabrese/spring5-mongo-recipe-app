@@ -16,7 +16,7 @@ plugins {
     id 'java'
     id 'eclipse'
     id 'org.springframework.boot' version "${springBootVersion}" // Use version here
-    id 'io.spring.dependency-management' // This one might be tricky to apply this way, keep an eye on it
+    id 'io.spring.dependency-management' version "${springBootVersion}"// This one might be tricky to apply this way, keep an eye on it
     id 'jacoco'
     id 'java-library' // Keep this one for clarity
 }
