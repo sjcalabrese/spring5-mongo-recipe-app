@@ -19,8 +19,11 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'jacoco'
 
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 24
-targetCompatibility = 24
+java {
+    toolchain{
+        languageVersion = JavaLanguageVersion.of(24)
+    }
+}
 
 repositories {
 	mavenCentral()
