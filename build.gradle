@@ -41,7 +41,7 @@ dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	runtimeOnly('org.springframework.boot:spring-boot-devtools')
 	implementation 'org.webjars:bootstrap:3.3.7-1'
-	implementationOnly('org.projectlombok:lombok')
+	compileOnly('org.projectlombok:lombok')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
