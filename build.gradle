@@ -1,26 +1,22 @@
-//buildscript {
-//	ext {
-//		springBootVersion = '3.5.7'
-//	}
-//	repositories {
-//		mavenCentral()
-//		maven { url "https://repo.spring.io/snapshot" }
-//		maven { url "https://repo.spring.io/milestone" }
-//	}
-//	dependencies {
-//		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-//	}
-//}
 buildscript {
-    ext {
-        springBootVersion = '3.5.7'
-    }
+	ext {
+		springBootVersion = '3.5.7'
+	}
+	repositories {
+		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
 }
+
 plugins {
     id 'java'
     id 'eclipse'
     id 'org.springframework.boot' version "${springBootVersion}" // Use version here
-    id 'io.spring.dependency-management' version "${springBootVersion}"// This one might be tricky to apply this way, keep an eye on it
+    id 'io.spring.dependency-management' version "1.1.7"// This one might be tricky to apply this way, keep an eye on it
     id 'jacoco'
     id 'java-library' // Keep this one for clarity
 }
@@ -45,14 +41,18 @@ dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	runtimeOnly('org.springframework.boot:spring-boot-devtools')
 	implementation 'org.webjars:bootstrap:3.3.7-1'
-	compileOnly('org.projectlombok:lombok')
+    compileOnly("org.projectlombok:lombok:1.18.42")
+    annotationProcessor("org.projectlombok:lombok:1.18.42")
+    testCompileOnly("org.projectlombok:lombok:1.18.42")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.42")
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
 //export test coverage
 jacocoTestReport {
     reports {
-        xml.enabled true
-        html.enabled false
+        xml.required = true
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
     }
 }
